@@ -1,11 +1,84 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import SvgArrowChevronRight from '@components/SvgArrowChevronRight.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+interface TocItem {
+  href: string;
+  label: string;
+}
+
+const tocList: TocItem[] = [
+  {
+    href: 'type_file',
+    label: 'type file',
+  },
+];
 ---
 
 <Layout>
-	<Welcome />
+	<main class="main">
+		<div class="toc">
+			<ul class="toc__list">
+				{tocList.map(({ href, label }) => (
+					<li class="toc__item">
+						<a
+							href={`./${href}/`}
+							class="toc__link"
+							target="_self"
+						>
+							<span class="toc__label">{label}</span>
+							<span class="toc__icon"><SvgArrowChevronRight /></span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</main>
 </Layout>
+
+<style>
+.main {
+	padding: var(--theme-gap-width);
+}
+
+.toc__list {
+  padding-left: 0.1rem;
+}
+
+.toc__item {
+	margin-top: 0.4rem;
+}
+
+.toc__link {
+	border-bottom: 1px solid;
+	color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+	font-size: 1rem;
+	line-height: 1.4rem;
+	text-decoration: none;
+	transition: opacity 300ms var(--ease-in-out-quad);
+	&:hover {
+		opacity: 0.9;
+		.toc__icon {
+			translate: 0.2rem 0;
+			transition: translate 300ms var(--ease-in-out-quad);
+		}
+	}
+}
+
+.toc__label {
+  pointer-events: none;
+}
+
+.toc__icon {
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+  pointer-events: none;
+	transition: translate 100ms var(--ease-out-quad);
+	width: 1rem;
+}
+</style>

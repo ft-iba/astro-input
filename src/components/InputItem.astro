@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<div class="inputItem">
+	<h3 class="inputItem__title">
+		{ title }
+	</h3>
+	<div class="inputItem__slot">
+		<slot />
+	</div>
+</div>
+
+<style>
+.inputItem__title {
+	font-size: 0.9rem;
+	font-weight: 700;
+	margin-top: 0.3rem;
+}
+
+.inputItem__slot {
+	margin-top: 0.4rem;
+}
+</style>

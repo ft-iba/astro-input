@@ -1,0 +1,85 @@
+---
+import InputItem from '@components/InputItem.astro';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout>
+	<section class="inputFile">
+		<h1 class="inputFile__title">type file</h1>
+		<h2 class="inputFile__sectionTitle">input file</h2>
+		<InputItem title='未指定'>
+			<input type="file">
+		</InputItem>
+		<InputItem title='capture user'>
+			<input type="file" capture="user">
+		</InputItem>
+		<InputItem title='capture environment'>
+			<input type="file" capture="environment">
+		</InputItem>
+
+		<h2 class="inputFile__sectionTitle">accept image/*</h2>
+		<InputItem title='accept image/*'>
+			<input type="file" accept="image/*">
+		</InputItem>
+		<InputItem title='capture user + accept image/*'>
+			<input type="file" capture="user" accept="image/*">
+		</InputItem>
+		<InputItem title='capture environment + accept image/*'>
+			<input type="file" capture="environment" accept="image/*">
+		</InputItem>
+
+		<h2 class="inputFile__sectionTitle">accept audio/*</h2>
+		<InputItem title='accept audio/*'>
+			<input type="file" accept="audio/*">
+		</InputItem>
+		<InputItem title='capture user + accept audio/*'>
+			<input type="file" capture="user" accept="audio/*">
+		</InputItem>
+		<InputItem title='capture environment + accept audio/*'>
+			<input type="file" capture="environment" accept="audio/*">
+		</InputItem>
+
+		<h2 class="inputFile__sectionTitle">accept video/*</h2>
+		<InputItem title='accept video/*'>
+			<input type="file" accept="video/*">
+		</InputItem>
+		<InputItem title='capture user + accept video/*'>
+			<input type="file" capture="user" accept="video/*">
+		</InputItem>
+		<InputItem title='capture environment + accept video/*'>
+			<input type="file" capture="environment" accept="video/*">
+		</InputItem>
+
+		<h2 class="inputFile__sectionTitle">accept image/*,text/plain</h2>
+		<InputItem title='accept image/*,text/plain'>
+			<input type="file" accept="image/*,text/plain">
+		</InputItem>
+		<InputItem title='capture user + accept image/*,text/plain'>
+			<input type="file" capture="user" accept="image/*,text/plain">
+		</InputItem>
+		<InputItem title='capture environment + accept image/*,text/plain'>
+			<input type="file" capture="environment" accept="image/*,text/plain">
+		</InputItem>
+	</section>
+</Layout>
+
+<style>
+.inputFile {
+	padding: var(--theme-gap-width);
+}
+
+.inputFile__title {
+	font-size: 1.6rem;
+}
+
+.inputFile__sectionTitle {
+	font-size: 1.2rem;
+	margin-top: 2.6rem;
+	padding-bottom: 0.8rem;
+	position: relative;
+	translate: -1.25rem 0;
+	&::before {
+		content: '・';
+	}
+}
+</style>

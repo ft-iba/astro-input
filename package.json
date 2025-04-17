@@ -8,8 +8,15 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "browserslist": [
+    "last 2 versions",
+    "android >= 10",
+    "iOS >= 16",
+    "not dead"
+  ],
   "dependencies": {
     "astro": "^5.7.2",
-    "astro-relative-links": "^0.4.2"
+    "astro-relative-links": "^0.4.2",
+    "postcss-preset-env": "^10.1.5"
   }
 }

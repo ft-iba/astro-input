@@ -2,9 +2,10 @@
 import AnchorBaseBlank from '@components/AnchorBaseBlank.astro';
 import InputItemVertical from '@components/InputItemVertical.astro';
 import Layout from '@layouts/Layout.astro';
-import { site } from '@constants/index.ts';
-
-const COMMIT_HASH = import.meta.env.COMMIT_HASH;
+import {
+  commit_hash,
+  site
+} from '@constants/index.ts';
 
 interface Screenshot {
   src: string;
@@ -116,7 +117,7 @@ const screenshotAndroidList: Screenshot[] = [
             </span>
             <span class="enterkeyhint__screenshotItemImage">
               <img
-                src={`/${site.base}/assets/images/${src}?v=${COMMIT_HASH}`}
+                src={`/${site.base}/assets/images/${src}?v=${commit_hash}`}
                 alt=""
                 class="enterkeyhint__screenshotItemImageSrc"
                 data-js="openBlankImage"
@@ -136,7 +137,7 @@ const screenshotAndroidList: Screenshot[] = [
             </span>
             <span class="enterkeyhint__screenshotItemImage">
               <img
-                src={`/${site.base}/assets/images/${src}?v=${COMMIT_HASH}`}
+                src={`/${site.base}/assets/images/${src}?v=${commit_hash}`}
                 alt=""
                 class="enterkeyhint__screenshotItemImageSrc"
                 data-js="openBlankImage"

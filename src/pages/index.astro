@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AnchorBaseSelf from '@components/AnchorBaseSelf.astro';
+import { site } from '@constants/index.ts';
 
 interface TocItem {
   href: string;
@@ -9,15 +10,15 @@ interface TocItem {
 
 const tocList: TocItem[] = [
   {
-    href: 'enterkeyhint',
+    href: `/${site.base}/enterkeyhint/`,
     label: 'enterkeyhint',
   },
   {
-    href: 'form_sample',
+		href: `/${site.base}/form_sample/`,
     label: 'form sample',
   },
   {
-    href: 'type_file',
+		href: `/${site.base}/type_file/`,
     label: 'type file',
   },
 ];

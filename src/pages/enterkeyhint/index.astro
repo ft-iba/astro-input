@@ -2,7 +2,7 @@
 import AnchorBaseBlank from '@components/AnchorBaseBlank.astro';
 import InputItemVertical from '@components/InputItemVertical.astro';
 import Layout from '@layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import { site } from '@constants/index.ts';
 
 interface Screenshot {
   src: string;
@@ -11,45 +11,45 @@ interface Screenshot {
 
 const screenshotIosList: Screenshot[] = [
   {
-    src: 'iphone14_ios_16.5_safari_1.PNG',
+    src: 'iphone14_ios_16.5_safari_1.webp',
     label: 'iPhone14 iOS16.5 Safari',
   },
   {
-    src: 'iphone14_ios_16.5_safari_2.PNG',
+    src: 'iphone14_ios_16.5_safari_2.webp',
     label: 'iPhone14 iOS16.5 Safari',
   },
   {
-    src: 'iphone14_ios_16.5_chrome_1.PNG',
+    src: 'iphone14_ios_16.5_chrome_1.webp',
     label: 'iPhone14 iOS16.5 Chrome',
   },
   {
-    src: 'iphone14_ios_16.5_chrome_2.PNG',
+    src: 'iphone14_ios_16.5_chrome_2.webp',
     label: 'iPhone14 iOS16.5 Chrome',
   },
   {
-    src: 'iphone_se2_ios_15.3.1_safari_1.PNG',
+    src: 'iphone_se2_ios_15.3.1_safari_1.webp',
     label: 'iPhone SE2 iOS15.3.1 Safari',
   },
   {
-    src: 'iphone_se2_ios_15.3.1_safari_2.PNG',
+    src: 'iphone_se2_ios_15.3.1_safari_2.webp',
     label: 'iPhone SE2 iOS15.3.1 Safari',
   },
   {
-    src: 'iphone_se2_ios_15.3.1_chrome_1.PNG',
+    src: 'iphone_se2_ios_15.3.1_chrome_1.webp',
     label: 'iPhone SE2 iOS15.3.1 Chrome',
   },
   {
-    src: 'iphone_se2_ios_15.3.1_chrome_2.PNG',
+    src: 'iphone_se2_ios_15.3.1_chrome_2.webp',
     label: 'iPhone SE2 iOS15.3.1 Chrome',
   },
 ]
 const screenshotAndroidList: Screenshot[] = [
   {
-    src: 'galaxy_s22_android14_chrome_1.jpg',
+    src: 'galaxy_s22_android14_chrome_1.webp',
     label: 'galaxy S22 Android14 Chrome',
   },
   {
-    src: 'galaxy_s22_android14_chrome_2.jpg',
+    src: 'galaxy_s22_android14_chrome_2.webp',
     label: 'galaxy S22 Android14 Chrome',
   },
 ]
@@ -113,8 +113,8 @@ const screenshotAndroidList: Screenshot[] = [
               { label }
             </span>
             <span class="enterkeyhint__screenshotItemImage">
-              <Image
-                src={import(`../../assets/images/${src}`)}
+              <img
+                src={`/${site.base}/assets/images/${src}`}
                 alt=""
                 class="enterkeyhint__screenshotItemImageSrc"
                 data-js="openBlankImage"
@@ -133,8 +133,8 @@ const screenshotAndroidList: Screenshot[] = [
               { label }
             </span>
             <span class="enterkeyhint__screenshotItemImage">
-              <Image
-                src={import(`../../assets/images/${src}`)}
+              <img
+                src={`/${site.base}/assets/images/${src}`}
                 alt=""
                 class="enterkeyhint__screenshotItemImageSrc"
                 data-js="openBlankImage"

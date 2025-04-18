@@ -1,0 +1,338 @@
+---
+import InputItemVertical from '@components/InputItemVertical.astro';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout>
+	<section class="formSample">
+		<h1 class="formSample__title">form sample page</h1>
+    <form id="sampleForm">
+      <!-- <h2 class="formSample__sectionTitle">form</h2> -->
+      <!-- <InputItemVertical title='type search'>
+      <input
+        type="search"
+        name="search_type"
+        class="formSample__input"/>
+      </InputItemVertical> -->
+
+      <InputItemVertical title='お名前'>
+        <div class="formSample__row">
+          <div class="formSample__rowItem">
+            <label class="formSample__label" for="family-name">姓</label>
+            <div class="formSample__target">
+              <input type="text" name="family-name" autocomplete="family-name" class="formSample__input" placeholder="田中" data-size="small"/>
+            </div>
+          </div>
+          <div class="formSample__rowItem">
+            <label class="formSample__label" for="given-name">名</label>
+            <div class="formSample__target">
+              <input type="text" name="given-name" autocomplete="given-name" class="formSample__input" placeholder="太郎" data-size="small"/>
+            </div>
+          </div>
+        </div>
+      </InputItemVertical>
+      <InputItemVertical title='電話番号'>
+        <input
+          type="tel"
+          name="tel"
+          autocomplete="tel"
+          class="formSample__input"
+          placeholder="09000000000"
+        />
+      </InputItemVertical>
+      <InputItemVertical title='郵便番号'>
+        <input
+          type="text"
+          name="postal-code"
+          autocomplete="postal-code"
+          class="formSample__input"
+          placeholder="郵便番号"/>
+      </InputItemVertical>
+      <InputItemVertical title='都道府県'>
+        <input
+          type="text"
+          name="address-level1"
+          autocomplete="address-level1"
+          class="formSample__input"
+          placeholder="東京都"/>
+      </InputItemVertical>
+      <InputItemVertical title='市区町村'>
+        <input
+          type="text"
+          name="address-level2"
+          autocomplete="address-level2"
+          class="formSample__input"
+          placeholder="中央区"/>
+      </InputItemVertical>
+      <InputItemVertical title='番地等'>
+        <input
+          type="text"
+          name="address-line1"
+          autocomplete="address-line1"
+          class="formSample__input"
+          placeholder="◯丁目◯番"/>
+      </InputItemVertical>
+      <InputItemVertical title='建物名・部屋番号等'>
+        <input
+          type="text"
+          name="address-line2"
+          autocomplete="address-line2"
+          class="formSample__input"
+          placeholder="コーポ◯◯ 101号室"/>
+      </InputItemVertical>
+      <InputItemVertical title='メールアドレス'>
+        <input
+          type="email"
+          name="email"
+          autocomplete="email"
+          class="formSample__input"
+          placeholder="yourname@example.com"
+        />
+      </InputItemVertical>
+      <InputItemVertical title='お勤め先'>
+        <input
+          type="text"
+          name="organization"
+          autocomplete="organization"
+          autocorrect="off"
+          autocapitalize="off"
+          class="formSample__input"
+          placeholder="◯◯株式会社"/>
+      </InputItemVertical>
+      <InputItemVertical title='生年月日'>
+        <div class="formSample__row">
+          <div class="formSample__rowItem">
+            <select
+              class="formSample__select"
+              title="生年月日(西暦)"
+              name="bday-year"
+              autocomplete="bday-year"
+            >
+              <option selected="">----</option>
+              <option value="2010">2010</option>
+              <option value="2009">2009</option>
+              <option value="2008">2008</option>
+              <option value="2007">2007</option>
+              <option value="2006">2006</option>
+              <option value="2005">2005</option>
+              <option value="2004">2004</option>
+              <option value="2003">2003</option>
+              <option value="2002">2002</option>
+              <option value="2001">2001</option>
+              <option value="2000">2000</option>
+              <option value="1999">1999</option>
+              <option value="1998">1998</option>
+              <option value="1997">1997</option>
+              <option value="1996">1996</option>
+              <option value="1995">1995</option>
+              <option value="1994">1994</option>
+              <option value="1993">1993</option>
+              <option value="1992">1992</option>
+              <option value="1991">1991</option>
+              <option value="1990">1990</option>
+              <option value="1989">1989</option>
+              <option value="1988">1988</option>
+              <option value="1987">1987</option>
+              <option value="1986">1986</option>
+              <option value="1985">1985</option>
+              <option value="1984">1984</option>
+              <option value="1983">1983</option>
+              <option value="1982">1982</option>
+              <option value="1981">1981</option>
+              <option value="1980">1980</option>
+            </select>
+            <span class="formSample__label">年</span>
+          </div>
+
+          <div class="formSample__rowItem">
+            <select
+              class="formSample__select"
+              title="生年月日(月)"
+              name="bday-month"
+              autocomplete="bday-month"
+            >
+              <option selected="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <span class="formSample__label">月</span>
+          </div>
+
+          <div class="formSample__rowItem">
+            <select
+              class="formSample__select"
+              title="生年月日(日)"
+              name="bday-day"
+              autocomplete="bday-day"
+            >
+              <option selected="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <span class="formSample__label">日</span>
+          </div>
+        </div>
+      </InputItemVertical>
+
+      <div class="formSample__action">
+        <button
+          class="formSample__actionButton"
+          type="submit"
+        >
+          <span class="formSample__actionButtonLabel">確認する (どこにも送信しません)</span>
+        </button>
+      </div>
+
+    </form>
+
+	</section>
+</Layout>
+
+<style>
+.formSample {
+  max-width: 100vw;
+	padding: var(--theme-gap-width);
+}
+
+form {
+  margin-top: 2rem;
+}
+
+.formSample__title {
+	font-size: 1.6rem;
+}
+
+.formSample__sectionTitle {
+	font-size: 1.2rem;
+	margin-top: 2.6rem;
+	padding-bottom: 0.8rem;
+	position: relative;
+	translate: -1.25rem 0;
+	&::before {
+		content: '・';
+	}
+}
+
+.formSample__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+}
+
+.formSample__rowItem {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.formSample__label {
+  font-size: 0.8rem;
+}
+
+.formSample__input {
+  appearance: none;
+  border: 1px solid var(--theme-color-divide);
+  border-radius: 0.3rem;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 100%;
+  padding: .3rem .4rem;
+  &[data-size="small"] {
+    width: 8.2rem;
+  }
+  &:not([data-size="small"]) {
+    width: 20rem;
+  }
+}
+
+.formSample__select {
+  appearance: none;
+  border: 1px solid var(--theme-color-divide);
+  border-radius: 0.3rem;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: .3rem .4rem;
+  width: 5rem;
+}
+
+.formSample__action {
+  margin-top: 2rem;
+}
+
+.formSample__actionButton {
+  background-color: var(--theme-color-black);
+  border: none;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+}
+
+.formSample__actionButtonLabel {
+  color: var(--theme-color-white);
+  font-size: 0.8rem;
+}
+
+.formSample__textarea {
+  background: none;
+  border: 1px solid var(--theme-color-divide);
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  color: #202124;
+  display: flex;
+  flex: 1;
+  grid-area: 1/1/2/2;
+  font-family: Helvetica Neue,sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  max-height: 144px;
+  outline: none;
+  overflow-y: auto;
+  padding: .3rem .4rem;
+  resize: none;
+  white-space: normal;
+  width: 100%;
+  word-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
+}
+</style>

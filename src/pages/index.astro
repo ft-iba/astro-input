@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import SvgArrowChevronRight from '@components/SvgArrowChevronRight.astro';
+import AnchorBaseSelf from '@components/AnchorBaseSelf.astro';
 
 interface TocItem {
   href: string;
@@ -8,6 +8,14 @@ interface TocItem {
 }
 
 const tocList: TocItem[] = [
+  {
+    href: 'enterkeyhint',
+    label: 'enterkeyhint',
+  },
+  {
+    href: 'form_sample',
+    label: 'form sample',
+  },
   {
     href: 'type_file',
     label: 'type file',
@@ -18,18 +26,13 @@ const tocList: TocItem[] = [
 <Layout>
 	<main class="main">
 		<div class="toc">
+			<h1 class="toc__title">table of contents</h1>
 			<ul class="toc__list">
 				{tocList.map(({ href, label }) => (
-					<li class="toc__item">
-						<a
-							href={`./${href}/`}
-							class="toc__link"
-							target="_self"
-						>
-							<span class="toc__label">{label}</span>
-							<span class="toc__icon"><SvgArrowChevronRight /></span>
-						</a>
-					</li>
+					<AnchorBaseSelf
+						href={href}
+						label={label}
+					/>
 				))}
 			</ul>
 		</div>
@@ -41,44 +44,18 @@ const tocList: TocItem[] = [
 	padding: var(--theme-gap-width);
 }
 
-.toc__list {
-  padding-left: 0.1rem;
-}
-
-.toc__item {
-	margin-top: 0.4rem;
-}
-
-.toc__link {
-	border-bottom: 1px solid;
-	color: inherit;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2em;
-	font-size: 1rem;
-	line-height: 1.4rem;
-	text-decoration: none;
-	transition: opacity 300ms var(--ease-in-out-quad);
-	&:hover {
-		opacity: 0.9;
-		.toc__icon {
-			translate: 0.2rem 0;
-			transition: translate 300ms var(--ease-in-out-quad);
-		}
+.toc__title {
+	font-size: 1.2rem;
+	padding-bottom: 0.8rem;
+	position: relative;
+	text-transform: capitalize;
+	translate: -1.25rem 0;
+	&::before {
+		content: '・';
 	}
 }
 
-.toc__label {
-  pointer-events: none;
-}
-
-.toc__icon {
-	aspect-ratio: 1;
-	display: flex;
-	align-items: center;
-	flex-shrink: 0;
-  pointer-events: none;
-	transition: translate 100ms var(--ease-out-quad);
-	width: 1rem;
+.toc__list {
+  padding-left: 0.1rem;
 }
 </style>

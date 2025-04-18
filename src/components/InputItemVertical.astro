@@ -5,23 +5,23 @@ interface Props {
 
 const { title } = Astro.props;
 ---
-<div class="inputItem">
-	<h3 class="inputItem__title">
+<div class="InputItemVertical">
+	<h3 class="InputItemVertical__title">
 		{ title }
 	</h3>
-	<div class="inputItem__slot">
+	<div class="InputItemVertical__slot">
 		<slot />
 	</div>
 </div>
 
 <style>
-.inputItem__title {
+.InputItemVertical__title {
 	font-size: 0.9rem;
 	font-weight: 700;
 	margin-top: 0.3rem;
 }
 
-.inputItem__slot {
+.InputItemVertical__slot {
 	margin-top: 0.4rem;
 }
 </style>

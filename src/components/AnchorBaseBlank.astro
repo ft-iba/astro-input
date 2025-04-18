@@ -1,0 +1,66 @@
+---
+import SvgArrowOutward from '@components/SvgArrowOutward.astro';
+
+interface Props {
+	as?: 'li' | 'p';
+  href: string;
+  label: string;
+}
+
+const {
+	as = 'li',
+	href,
+	label
+} = Astro.props;
+const Tag = as;
+---
+<Tag class="anchorBaseBlank">
+	<a
+		href={href}
+		class="anchorBaseBlank__link"
+		target="_blank"
+	>
+		<span class="anchorBaseBlank__label">{label}</span>
+		<span class="anchorBaseBlank__icon"><SvgArrowOutward /></span>
+	</a>
+</Tag>
+
+<style>
+.anchorBaseBlank {
+	margin-top: 0.4rem;
+}
+
+.anchorBaseBlank__link {
+	border-bottom: 1px solid;
+	color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	padding-bottom: 0.4rem;
+	text-decoration: none;
+	transition: opacity 300ms var(--ease-in-out-quad);
+	&:hover {
+		opacity: 0.9;
+		/* .anchorBaseBlank__icon {
+			translate: 0.2rem 0;
+			transition: translate 300ms var(--ease-in-out-quad);
+		} */
+	}
+}
+
+.anchorBaseBlank__label {
+  pointer-events: none;
+}
+
+.anchorBaseBlank__icon {
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+  pointer-events: none;
+	transition: translate 100ms var(--ease-out-quad);
+	width: 0.8rem;
+}
+</style>

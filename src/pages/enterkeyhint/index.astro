@@ -1,0 +1,159 @@
+---
+import AnchorBaseBlank from '@components/AnchorBaseBlank.astro';
+import InputItemVertical from '@components/InputItemVertical.astro';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout>
+	<section class="enterkeyhint">
+		<h1 class="enterkeyhint__title">enterkeyhint</h1>
+    <div class="enterkeyhint__detail">
+      <AnchorBaseBlank
+        as="p"
+        href='https://developer.mozilla.org/ja/docs/Web/HTML/Reference/Global_attributes/enterkeyhint'
+        label='enterkeyhint - HTML: ハイパーテキストマークアップ言語 | MDN'
+      />
+    </div>
+    <form id="enterkeyhintSearch">
+      <InputItemVertical title='enterkeyhint search'>
+        <input
+          type="text"
+          name="search_hint"
+          enterkeyhint="search"
+          class="enterkeyhint__input"/>
+          <!-- <textarea class="enterkeyhint__textarea" title="" value="" placeholder="" aria-label="検索" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" enterkeyhint="search" maxlength="2048" name="q" role="textbox" rows="1" spellcheck="false" tabindex="0"  aria-expanded="true"></textarea> -->
+      </InputItemVertical>
+    </form>
+    <form id="enterkeyhintDone">
+      <InputItemVertical title='enterkeyhint done'>
+        <input
+          type="text"
+          name="search_done"
+          enterkeyhint="done"
+          class="enterkeyhint__input"/>
+      </InputItemVertical>
+    </form>
+    <form id="enterkeyhintGo">
+      <InputItemVertical title='enterkeyhint go'>
+        <input
+          type="text"
+          name="search_go"
+          enterkeyhint="go"
+          class="enterkeyhint__input"/>
+      </InputItemVertical>
+    </form>
+    <form id="enterkeyhintSend">
+      <InputItemVertical title='enterkeyhint send'>
+        <input
+          type="text"
+          name="search_send"
+          enterkeyhint="send"
+          class="enterkeyhint__input"/>
+      </InputItemVertical>
+    </form>
+	</section>
+</Layout>
+
+<script>
+const init = () => {
+  document.querySelectorAll('form').forEach(form => {
+  const input = form.querySelector('input');
+
+  if (!input) return;
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const hint = input.getAttribute('enterkeyhint');
+    const value = input.value;
+
+    switch (hint) {
+      // case 'search':
+      //   search(value);
+      //   break;
+      // case 'send':
+      //   sendMessage(value);
+      //   break;
+      // case 'go':
+      //   goToNextStep();
+      //   break;
+      default:
+        alert(`${hint}: ${value}`);
+    }
+  });
+});
+
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  init();
+});
+</script>
+
+<style>
+.enterkeyhint {
+  max-width: 100vw;
+	padding: var(--theme-gap-width);
+}
+
+.enterkeyhint__title {
+	font-size: 1.6rem;
+}
+
+.enterkeyhint__sectionTitle {
+	font-size: 1.2rem;
+	margin-top: 2.6rem;
+	padding-bottom: 0.8rem;
+	position: relative;
+	translate: -1.25rem 0;
+	&::before {
+		content: '・';
+	}
+}
+
+.enterkeyhint__input {
+  appearance: none;
+  border: 1px solid var(--theme-color-divide);
+  border-radius: 0.3rem;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 100%;
+  padding: .3rem .4rem;
+  &[data-size="small"] {
+    margin-right: 1.2rem;
+    width: 8.2rem;
+  }
+  &:not([data-size="small"]) {
+    width: 20rem;
+  }
+}
+
+.enterkeyhint__textarea {
+  background: none;
+  border: 1px solid var(--theme-color-divide);
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  color: #202124;
+  display: flex;
+  flex: 1;
+  grid-area: 1/1/2/2;
+  font-family: Helvetica Neue,sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  max-height: 144px;
+  outline: none;
+  overflow-y: auto;
+  padding: .3rem .4rem;
+  resize: none;
+  white-space: normal;
+  width: 100%;
+  word-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.enterkeyhint__detail {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+</style>

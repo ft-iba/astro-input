@@ -9,6 +9,7 @@
 
   --theme-color-black: #222;
   --theme-color-divide: rgb(0 0 0 / 0.4);
+  --theme-color-white: #fff;
   --theme-gap-width: 2rem;
 
   --ease-in-sine: cubic-bezier(0.12, 0, 0.39, 0);

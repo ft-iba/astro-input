@@ -1,5 +1,5 @@
 ---
-import InputItem from '@components/InputItem.astro';
+import InputItemVertical from '@components/InputItemVertical.astro';
 import Layout from '@layouts/Layout.astro';
 ---
 
@@ -7,59 +7,59 @@ import Layout from '@layouts/Layout.astro';
 	<section class="inputFile">
 		<h1 class="inputFile__title">type file</h1>
 		<h2 class="inputFile__sectionTitle">input file</h2>
-		<InputItem title='未指定'>
+		<InputItemVertical title='未指定'>
 			<input type="file">
-		</InputItem>
-		<InputItem title='capture user'>
+		</InputItemVertical>
+		<InputItemVertical title='capture user'>
 			<input type="file" capture="user">
-		</InputItem>
-		<InputItem title='capture environment'>
+		</InputItemVertical>
+		<InputItemVertical title='capture environment'>
 			<input type="file" capture="environment">
-		</InputItem>
+		</InputItemVertical>
 
 		<h2 class="inputFile__sectionTitle">accept image/*</h2>
-		<InputItem title='accept image/*'>
+		<InputItemVertical title='accept image/*'>
 			<input type="file" accept="image/*">
-		</InputItem>
-		<InputItem title='capture user + accept image/*'>
+		</InputItemVertical>
+		<InputItemVertical title='capture user + accept image/*'>
 			<input type="file" capture="user" accept="image/*">
-		</InputItem>
-		<InputItem title='capture environment + accept image/*'>
+		</InputItemVertical>
+		<InputItemVertical title='capture environment + accept image/*'>
 			<input type="file" capture="environment" accept="image/*">
-		</InputItem>
+		</InputItemVertical>
 
 		<h2 class="inputFile__sectionTitle">accept audio/*</h2>
-		<InputItem title='accept audio/*'>
+		<InputItemVertical title='accept audio/*'>
 			<input type="file" accept="audio/*">
-		</InputItem>
-		<InputItem title='capture user + accept audio/*'>
+		</InputItemVertical>
+		<InputItemVertical title='capture user + accept audio/*'>
 			<input type="file" capture="user" accept="audio/*">
-		</InputItem>
-		<InputItem title='capture environment + accept audio/*'>
+		</InputItemVertical>
+		<InputItemVertical title='capture environment + accept audio/*'>
 			<input type="file" capture="environment" accept="audio/*">
-		</InputItem>
+		</InputItemVertical>
 
 		<h2 class="inputFile__sectionTitle">accept video/*</h2>
-		<InputItem title='accept video/*'>
+		<InputItemVertical title='accept video/*'>
 			<input type="file" accept="video/*">
-		</InputItem>
-		<InputItem title='capture user + accept video/*'>
+		</InputItemVertical>
+		<InputItemVertical title='capture user + accept video/*'>
 			<input type="file" capture="user" accept="video/*">
-		</InputItem>
-		<InputItem title='capture environment + accept video/*'>
+		</InputItemVertical>
+		<InputItemVertical title='capture environment + accept video/*'>
 			<input type="file" capture="environment" accept="video/*">
-		</InputItem>
+		</InputItemVertical>
 
 		<h2 class="inputFile__sectionTitle">accept image/*,text/plain</h2>
-		<InputItem title='accept image/*,text/plain'>
+		<InputItemVertical title='accept image/*,text/plain'>
 			<input type="file" accept="image/*,text/plain">
-		</InputItem>
-		<InputItem title='capture user + accept image/*,text/plain'>
+		</InputItemVertical>
+		<InputItemVertical title='capture user + accept image/*,text/plain'>
 			<input type="file" capture="user" accept="image/*,text/plain">
-		</InputItem>
-		<InputItem title='capture environment + accept image/*,text/plain'>
+		</InputItemVertical>
+		<InputItemVertical title='capture environment + accept image/*,text/plain'>
 			<input type="file" capture="environment" accept="image/*,text/plain">
-		</InputItem>
+		</InputItemVertical>
 	</section>
 </Layout>
 

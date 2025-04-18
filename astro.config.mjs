@@ -7,5 +7,6 @@ import relativeLinks from 'astro-relative-links';
 export default defineConfig({
   site: 'https://ft-iba.github.io',
   base: 'astro-input',
+  trailingSlash: 'always',
   integrations: [relativeLinks()]
 });

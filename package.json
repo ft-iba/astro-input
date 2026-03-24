@@ -15,7 +15,7 @@
     "not dead"
   ],
   "dependencies": {
-    "astro": "^5.16.11",
+    "astro": "^6.0.8",
     "postcss-preset-env": "^10.1.5"
   },
   "devDependencies": {
